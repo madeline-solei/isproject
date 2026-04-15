@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ballet Style Match Quiz</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: #efe1cf;
+      color: #3e2a1f;
+    }
+
+    .app-wrap {
+      width: min(1200px, 94vw);
+      margin: 28px auto;
+      border-top: 4px solid #7e5336;
+      padding: 10px 0 24px;
+    }
+
+    h1 {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #5a3a2b;
+      margin-top: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .question {
+      margin-bottom: 18px;
+      padding: 14px;
+      border-top: 1px solid #cdb294;
+      background: transparent;
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 0;
+    }
+
+    .question p {
+      margin-top: 0;
+      font-weight: 700;
+    }
+
+    label {
+      display: block;
+      margin: 6px 0;
+      cursor: pointer;
+    }
+
+    button {
+      background-color: #7e5336;
+      color: #fff;
+      border: none;
+      border-radius: 0;
+      padding: 10px 16px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #8a5738;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 14px;
+      background-color: transparent;
+      border-top: 1px solid #cdb294;
+      min-height: 36px;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      margin-top: 20px;
+    }
+
+    .nav-links a {
+      color: #6a4028;
+      margin-right: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: #8a5738;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-wrap">
+    <h1>Ballet Style Match Quiz</h1>
+    <p>
+      Pick your preferences and see which ballet mood fits you best.
+      This app is intentionally kept in one file for the class requirement.
+    </p>
+
+    <div class="question">
+      <p>1) Which rehearsal vibe feels best?</p>
+      <label><input type="radio" name="q1" value="classic"> Clean lines and full classical structure</label>
+      <label><input type="radio" name="q1" value="dramatic"> Intense storytelling and emotional depth</label>
+      <label><input type="radio" name="q1" value="contemporary"> Athletic speed and modern edge</label>
+    </div>
+
+    <div class="question">
+      <p>2) Which music style do you gravitate toward?</p>
+      <label><input type="radio" name="q2" value="classic"> Lyrical symphonic music</label>
+      <label><input type="radio" name="q2" value="dramatic"> Sweeping romantic scores</label>
+      <label><input type="radio" name="q2" value="contemporary"> Repetitive pulse and minimalist rhythm</label>
+    </div>
+
+    <div class="question">
+      <p>3) What sounds most exciting on stage?</p>
+      <label><input type="radio" name="q3" value="classic"> Precision corps work and elegant adagio</label>
+      <label><input type="radio" name="q3" value="dramatic"> Character arcs and theatrical partnership</label>
+      <label><input type="radio" name="q3" value="contemporary"> Sharp contrasts, power, and risk</label>
+    </div>
+
+    <button id="scoreBtn" type="button">See My Ballet Match</button>
+    <div id="result">Your result will appear here.</div>
+
+    <div class="nav-links">
+      <a href="scratch.html">Back to Scratch Page</a>
+      <a href="index.html">Go to Professional Page</a>
+    </div>
+  </div>
+
+  <script>
+    function getSelectedValue(groupName) {
+      var selected = document.querySelector('input[name="' + groupName + '"]:checked');
+      return selected ? selected.value : null;
+    }
+
+    function evaluateQuiz() {
+      var answers = [getSelectedValue("q1"), getSelectedValue("q2"), getSelectedValue("q3")];
+      if (answers.includes(null)) {
+        document.getElementById("result").textContent = "Please answer all three questions first.";
+        return;
+      }
+
+      var scores = { classic: 0, dramatic: 0, contemporary: 0 };
+      answers.forEach(function(answer) {
+        scores[answer] += 1;
+      });
+
+      var topType = "classic";
+      if (scores.dramatic > scores[topType]) topType = "dramatic";
+      if (scores.contemporary > scores[topType]) topType = "contemporary";
+
+      var resultText = "";
+      if (topType === "classic") {
+        resultText = "You match CLASSIC LUMINOSITY: refined, musical, and line-focused. Think Balanchine's Serenade and Swan Lake.";
+      } else if (topType === "dramatic") {
+        resultText = "You match DRAMATIC ROMANTIC: expressive, story-centered, and emotionally intense. Think Giselle and Romeo and Juliet.";
+      } else {
+        resultText = "You match CONTEMPORARY FIRE: bold, fast, and physically fearless. Think Glass Pieces and In the Middle, Somewhat Elevated.";
+      }
+
+      document.getElementById("result").textContent = resultText;
+    }
+
+    document.getElementById("scoreBtn").addEventListener("click", evaluateQuiz);
+  </script>
+</body>
+</html>

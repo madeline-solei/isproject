@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ballet Notes | From Scratch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-wrap">
+    <div class="top-nav">
+      <a href="index.html">Back to Professional Resume Page</a>
+      <a href="app.html">Play the Ballet Quiz App</a>
+      <a href="#favorites">Jump to Favorite Ballets</a>
+      <a href="#tableau">Jump to Tableau Graph</a>
+    </div>
+
+    <div class="hero-box">
+      <h1>Ballet, Discipline, and Craft</h1>
+      <p>
+        This from-scratch page is about why ballet matters to me: structure, precision,
+        and the long process of refining movement over time.
+      </p>
+    </div>
+
+    <div class="content-grid">
+      <div class="card-box">
+        <h2>Quotes That Inspire Me</h2>
+        <blockquote>"Dance, dance, otherwise we are lost." - Pina Bausch</blockquote>
+        <blockquote>"To dance is to be out of yourself. Larger, more beautiful, more powerful." - Agnes de Mille</blockquote>
+        <blockquote>"Great dancers are not great because of their technique, they are great because of their passion." - Martha Graham</blockquote>
+      </div>
+
+      <div class="card-box">
+        <h2>How I Approach Training</h2>
+        <ol>
+          <li>Daily class priorities
+            <ul>
+              <li>Clean turnout and alignment</li>
+              <li>Consistent epaulement</li>
+              <li>Musicality and dynamic contrast</li>
+            </ul>
+          </li>
+          <li>Rehearsal focus</li>
+          <li>Performance mindset</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="card-box image-section">
+      <h2>Studio Moments</h2>
+      <div class="photo-row">
+        <img
+          src="images/contemporary.JPG"
+          alt="Contemporary ballet pose"
+        >
+        <img
+          src="images/fourthposition.JPG"
+          alt="Ballet dancer in fourth position"
+        >
+      </div>
+      <p>These are photos of me dancing.</p>
+    </div>
+
+    <div class="card-box video-section">
+      <h2>Featured Performance Video</h2>
+      <div class="video-frame">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/3zMCxmdkcRY"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <p>If this does not load in local preview, open the hosted page in GitHub Pages (or a local web server) and check your network/privacy settings.</p>
+    </div>
+
+    <div class="card-box" id="favorites">
+      <h2>Favorite Ballets and Ballet Works</h2>
+      <ul>
+        <li>Balanchine's <em>Walpurgisnacht</em></li>
+        <li>Balanchine's <em>Serenade</em></li>
+        <li><em>Giselle</em></li>
+        <li>MacMillan's <em>Romeo and Juliet</em></li>
+        <li><em>Glass Pieces</em> by Jerome Robbins</li>
+        <li><em>After the Rain</em></li>
+        <li><em>In the Middle, Somewhat Elevated</em></li>
+        <li><em>Swan Lake</em></li>
+      </ul>
+    </div>
+
+    <div class="card-box" id="tableau">
+      <h2>Interactive Tableau: Royal Opera House Top 20 Ballets</h2>
+      <div class="tableauPlaceholder" id="viz1776281700665" style="position: relative;">
+        <noscript>
+          <a href="#">
+            <img alt="Sheet 1" src="https://public.tableau.com/static/images/Ro/RoyalOperaHouseTop20Ballets_0/Sheet1/1_rss.png" style="border: none;">
+          </a>
+        </noscript>
+        <object class="tableauViz" style="display:none;">
+          <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F">
+          <param name="embed_code_version" value="3">
+          <param name="site_root" value="">
+          <param name="name" value="RoyalOperaHouseTop20Ballets_0/Sheet1">
+          <param name="tabs" value="no">
+          <param name="toolbar" value="yes">
+          <param name="static_image" value="https://public.tableau.com/static/images/Ro/RoyalOperaHouseTop20Ballets_0/Sheet1/1.png">
+          <param name="animate_transition" value="yes">
+          <param name="display_static_image" value="yes">
+          <param name="display_spinner" value="yes">
+          <param name="display_overlay" value="yes">
+          <param name="display_count" value="yes">
+          <param name="language" value="en-US">
+        </object>
+      </div>
+    </div>
+
+    <div class="bottom-nav">
+      <a href="index.html">Back to Professional Page</a>
+      <a href="app.html">Go to AI Ballet Quiz App</a>
+    </div>
+  </div>
+
+  <script>
+    var divElement = document.getElementById("viz1776281700665");
+    var vizElement = divElement.getElementsByTagName("object")[0];
+    vizElement.style.width = "100%";
+    vizElement.style.height = (divElement.offsetWidth * 0.75) + "px";
+    var scriptElement = document.createElement("script");
+    scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+  </script>
+</body>
+</html>
